@@ -34,7 +34,7 @@ const AddBook = () => {
         alert("All fields are requried");
       } else {
         const response = await axios.post(
-          "http://localhost:3000/api/v1/add-book",
+          `${import.meta.env.VITE_API_URL}/api/v1/add-book`,
           Data,
           { headers }
         );

@@ -9,7 +9,7 @@ const AllBooks = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        "http://localhost:3000/api/v1/get-all-books"
+        `${import.meta.env.VITE_API_URL}/api/v1/get-all-books`
       );
       setData(response.data.data);
     };

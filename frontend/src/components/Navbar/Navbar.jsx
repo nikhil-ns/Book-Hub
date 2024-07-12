@@ -35,7 +35,7 @@ const Navbar = () => {
   const role = useSelector((state) => state.auth.role);
 
   if (isLoggedIn === false) {
-    links.splice(2, 2);
+    links.splice(2, 3);
   }
   if(isLoggedIn === true && role === "user"){
     links.splice(4,1);
@@ -54,7 +54,7 @@ const Navbar = () => {
             src="https://cdn-icons-png.flaticon.com/128/10433/10433049.png"
             alt="logo"
           />
-          <h1 className="text-2xl font-semibold">Book Store</h1>
+          <h1 className="text-2xl font-semibold">Book Hub</h1>
         </Link>
 
         <div className="nav-links block md:flex items-center gap-4">

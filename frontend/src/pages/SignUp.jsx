@@ -22,7 +22,7 @@ const SignUp = () => {
       if(Values.username === "" || Values.email === "" || Values.password === "" || Values.address === ""){
         alert("All fields are required");
       } else {
-        const response = await axios.post("http://localhost:3000/api/v1/sign-up", Values);
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/sign-up`, Values);
         alert(response.data.message)
         navigate("/LogIn")
       }

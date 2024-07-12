@@ -13,7 +13,7 @@ const Settings = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        "http://localhost:3000/api/v1/get-user-information",
+        `${import.meta.env.VITE_API_URL}/api/v1/get-user-information`,
         { headers }
       );
       setProfileData(response.data);
@@ -22,14 +22,14 @@ const Settings = () => {
     fetch();
   });
 
-  const change = (e) => {
+  const changeAddress = (e) => {
     const { name, value } = e.target;
     setValue({ ...Value, [name]: value });
   };
 
   const submitAddress = async () => {
     const response = await axios.put(
-      "http://localhost:3000/api/v1/update-address",
+      `${import.meta.env.VITE_API_URL}/api/v1/update-address`,
       Value,
       { headers }
     );
@@ -65,7 +65,7 @@ const Settings = () => {
               placeholder="Address"
               name="address"
               value={Value.address}
-              onChange={change}
+              onChange={changeAddress}
             />
           </div>
           <div className="mt-4 flex justify-end">

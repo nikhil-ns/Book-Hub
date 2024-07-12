@@ -24,7 +24,7 @@ const LogIn = () => {
       if(Values.username === "" || Values.password === ""){
         alert("All fields are required");
       } else {
-        const response = await axios.post("http://localhost:3000/api/v1/sign-in", Values);
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/sign-in`, Values);
         
         dispatch(authActions.login());
         dispatch(authActions.changeRole(response.data.role));
