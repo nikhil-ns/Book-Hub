@@ -40,19 +40,19 @@ const Settings = () => {
       {!ProfileData && <Loader />}
       {ProfileData && (
         <div className="h-[100%] p-0 md:p-4 text-zinc-100">
-          <h1 className="text-3xl md:text-5xl font-semibold text-zinc-500 mb-8">
+          <h1 className="text-3xl md:text-5xl font-bold text-secondary-400 mb-8">
             Setting
           </h1>
           <div className="flex gap-12">
             <div>
               <label htmlFor="">Username</label>
-              <p className="p-2 rounded bg-zinc-800 mt-2 font-semibold">
+              <p className="p-2 rounded bg-black mt-2 font-semibold">
                 {ProfileData.username}
               </p>
             </div>
             <div>
               <label htmlFor="">Email</label>
-              <p className="p-2 rounded bg-zinc-800 mt-2 font-semibold">
+              <p className="p-2 rounded bg-black mt-2 font-semibold">
                 {ProfileData.email}
               </p>
             </div>
@@ -60,7 +60,7 @@ const Settings = () => {
           <div className="mt-4 flex flex-col">
             <label htmlFor="">Address</label>
             <textarea
-              className="p-2 rounded bg-zinc-800 mt-2 font-semibold"
+              className="p-2 rounded bg-black mt-2 font-semibold"
               rows="5"
               placeholder="Address"
               name="address"

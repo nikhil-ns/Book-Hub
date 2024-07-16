@@ -54,14 +54,14 @@ const ViewBookDetails = () => {
   return (
     <>
     {!Data && (
-        <div className="h-screen bg-zinc-900 flex items-center justify-center">
+        <div className="h-screen bg-primary-background flex items-center justify-center">
           <Loader />
         </div>
       )}
       {Data && (
-        <div className="px-4 md:px-12 py-8 bg-zinc-900 flex flex-col lg:flex-row gap-8 items-start">
+        <div className="px-4 md:px-12 py-8 bg-primary-background flex flex-col lg:flex-row gap-8 items-start">
           <div className="w-full lg:w-3/6">
-            <div className="flex flex-col lg:flex-row justify-around bg-zinc-800 p-12 rounded">
+            <div className="flex flex-col lg:flex-row justify-around bg-zinc-200 border-2 border-black p-12 rounded">
               <img
                 src={Data.url}
                 alt="/"
@@ -96,15 +96,15 @@ const ViewBookDetails = () => {
             </div>
           </div>
           <div className="p-4 w-full lg:w-3/6">
-            <h1 className="text-4xl text-zinc-300 font-semibold">
+            <h1 className="text-4xl text-black font-semibold">
               {Data.title}
             </h1>
-            <p className="text-zinc-400 mt-1">by {Data.author}</p>
-            <p className="text-zinc-500 mt-4 text-x1">{Data.desc}</p>
-            <p className="flex mt-4 items-center justify-start text-zinc-400">
+            <p className="text-secondary-400 mt-1">by {Data.author}</p>
+            <p className="text-zinc-600 mt-4 text-x1">{Data.desc}</p>
+            <p className="flex mt-4 items-center justify-start text-zinc-600">
               <GrLanguage className="me-3" /> {Data.language}
             </p>
-            <p className="mt-4 text-zinc-100 text-3xl font-semibold">
+            <p className="mt-4 text-black text-3xl font-semibold">
               Price : Rs {Data.price}
             </p>
           </div>

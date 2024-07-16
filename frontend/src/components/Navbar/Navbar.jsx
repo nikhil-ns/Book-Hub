@@ -47,7 +47,7 @@ const Navbar = () => {
   const [MobileNav, setMobileNav] = useState("hidden");
   return (
     <>
-      <nav className="z-50 relative bg-zinc-800 text-white px-8 py-4 flex items-center justify-between">
+      <nav className="z-50 relative bg-primary-400 text-black font-bold px-8 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img
             className="h-10 me-4"
@@ -101,7 +101,7 @@ const Navbar = () => {
             </>
           )}
           <button
-            className="block md:hidden text-white text-2xl hover:text-zinc-400"
+            className="block md:hidden text-zinc-800 text-2xl hover:text-black"
             onClick={() =>
               MobileNav === "hidden"
                 ? setMobileNav("block")
@@ -116,12 +116,12 @@ const Navbar = () => {
       {/* Mobile Nav Bar */}
 
       <div
-        className={`${MobileNav} bg-zinc-800 h-screen absolute top-0 left-0 w-full z-40 flex flex-col items-center justify-center`}
+        className={`${MobileNav} bg-primary-background h-screen absolute top-0 left-0 w-full z-40 flex flex-col items-center justify-center`}
       >
         {links.map((item, i) => (
           <Link
             to={item.link}
-            className={`${MobileNav} text-white text-4xl mb-8 font-semibold hover:text-blue-500 transition-all duration-300`}
+            className={`${MobileNav} text-black text-4xl mb-8 font-semibold hover:text-blue-500 transition-all duration-300`}
             key={i}
             onClick={() =>
               MobileNav === "hidden"

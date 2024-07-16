@@ -53,7 +53,7 @@ const Cart = () => {
   }
 
   return (
-    <div className='bg-zinc-900 px-12 h-screen py-8'>
+    <div className='bg-primary-background px-12 h-screen py-8'>
       {!Cart && <div className='w-full h-[100%] flex items-center justify-center'> <Loader/> </div>}
 
       {Cart && Cart.length == 0 && (
@@ -69,11 +69,11 @@ const Cart = () => {
 
       {Cart && Cart.length > 0 && (
         <>
-          <h1 className='text-5xl font-semibold text-zinc-500 mb-8'>
+          <h1 className='text-5xl font-bold text-secondary-400 mb-8'>
             Your Cart
           </h1>
           {Cart.map((items, i) => (
-            <div className='w-full my-4 rounded flex flex-col md:flex-row p-4 bg-zinc-800 items-center justify-around'
+            <div className='w-full my-4 rounded flex flex-col md:flex-row p-4 bg-zinc-600 items-center justify-around'
             key={i}>
               <img src={items.url} alt='/' className='h-[20vh] md:h-[10vh] object-cover'/>
               <div className='w-full md:w-auto'>
