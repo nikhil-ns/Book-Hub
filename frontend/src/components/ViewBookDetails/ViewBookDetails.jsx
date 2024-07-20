@@ -8,6 +8,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteOutline } from "react-icons/md";
+import { toast } from "react-toastify";
 
 const ViewBookDetails = () => {
   const { id } = useParams();
@@ -37,17 +38,17 @@ const ViewBookDetails = () => {
 
   const handleFavourite = async ()=>{
     const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/v1/add-book-to-favourite`, {}, { headers });
-    alert(response.data.message)
+    toast(response.data.message)
   }
 
   const handleCart = async ()=>{
     const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/v1/add-to-cart`, {}, { headers });
-    alert(response.data.message)
+    toast(response.data.message)
   }
 
   const deleteBook = async () =>{
     const response = await axios.delete(`${import.meta.env.VITE_API_URL}/api/v1/delete-book`, {headers})
-    alert(response.data.message)
+    toast(response.data.message)
     navigate("/all-books")
   }
 

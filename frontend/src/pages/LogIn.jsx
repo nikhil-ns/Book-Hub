@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { authActions } from '../store/auth';
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
 const LogIn = () => {
 
@@ -31,10 +32,11 @@ const LogIn = () => {
         localStorage.setItem("id", response.data.id);
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("role", response.data.role);
+        toast("Login Successfully")
         navigate("/profile")
       }
     } catch (error) {
-      alert(error.response.data.message)
+      toast(error.response.data.message)
     }
   }
   return (

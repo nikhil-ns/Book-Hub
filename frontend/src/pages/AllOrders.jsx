@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 import { IoOpenOutline } from "react-icons/io5";
 import SeeUserData from "./SeeUserData";
+import { toast } from "react-toastify";
 
 const AllOrders = () => {
   const [AllOrders, setAllOrders] = useState();
@@ -40,8 +41,8 @@ const AllOrders = () => {
       `${import.meta.env.VITE_API_URL}/api/v1/update-status/${id}`,
       Values,
       {headers}
-    )
-    alert(response.data.message)
+    );
+    toast(response.data.message)
   }
 
   const setOptionsButton = async(i)=>{

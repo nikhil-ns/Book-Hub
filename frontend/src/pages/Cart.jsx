@@ -3,6 +3,7 @@ import Loader from '../components/Loader/Loader';
 import { AiFillDelete } from "react-icons/ai";
 import { useNavigate } from "react-router-dom"
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Cart = () => {
 
   const deleteItem = async (bookid) =>{
     const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/v1/remove-from-cart/${bookid}`, {}, { headers });
-    alert(response.data.message);
+    toast(response.data.message);
   };
 
   useEffect(()=>{
@@ -45,7 +46,7 @@ const Cart = () => {
           { order : Cart },
           { headers }
         );
-        alert(response.data.message);
+        toast(response.data.message);
         navigate("/profile/orderHistory");
     } catch (error) {
       console.log(error)

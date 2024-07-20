@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const BookCard = ({ data, favourite }) => {
   //   console.log(data);
@@ -11,7 +12,7 @@ const BookCard = ({ data, favourite }) => {
   }
   const handleRemoveBook = async ()=>{
     const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/v1/remove-book-from-favourite`, {}, { headers })
-    alert(response.data.message);
+    toast(response.data.message);
   }
   return (
     <div className="bg-zinc-200 rounded p-4 flex flex-col border border-black">

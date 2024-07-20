@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const UpdateBook = () => {
   const [Data, setData] = useState({
@@ -36,7 +37,7 @@ const UpdateBook = () => {
         Data.desc === "" ||
         Data.language === ""
       ) {
-        alert("All fields are requried");
+        toast("All fields are requried");
       } else {
         const response = await axios.put(
           `${import.meta.env.VITE_API_URL}/api/v1/update-book`,
@@ -51,7 +52,7 @@ const UpdateBook = () => {
           desc: "",
           language: "",
         });
-        alert(response.data.message);
+        toast(response.data.message);
         navigate(`/view-book-details/${id}`)
       }
     } catch (error) {

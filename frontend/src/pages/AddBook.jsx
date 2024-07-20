@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const AddBook = () => {
   const [Data, setData] = useState({
@@ -31,7 +32,7 @@ const AddBook = () => {
         Data.desc === "" ||
         Data.language === ""
       ) {
-        alert("All fields are requried");
+        toast("All fields are requried");
       } else {
         const response = await axios.post(
           `${import.meta.env.VITE_API_URL}/api/v1/add-book`,
@@ -46,7 +47,7 @@ const AddBook = () => {
           desc: "",
           language: "",
         });
-        alert(response.data.message);
+        toast(response.data.message);
       }
     } catch (error) {
       console.log(error);

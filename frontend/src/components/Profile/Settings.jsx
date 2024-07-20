@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
+import { toast } from "react-toastify";
 
 const Settings = () => {
   const [ProfileData, setProfileData] = useState();
@@ -33,7 +34,7 @@ const Settings = () => {
       Value,
       { headers }
     );
-    alert(response.data.message)
+    toast(response.data.message)
   };
   return (
     <>
