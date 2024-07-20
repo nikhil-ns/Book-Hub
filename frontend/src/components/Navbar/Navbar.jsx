@@ -87,13 +87,13 @@ const Navbar = () => {
               <div className="hidden md:flex gap-4">
                 <Link
                   to="/LogIn"
-                  className="px-4 py-1 border border-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300"
+                  className="px-4 py-1 border-2 border-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300"
                 >
                   SignIn
                 </Link>
                 <Link
                   to="/SignUp"
-                  className="px-4 py-1 bg-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300"
+                  className="px-4 py-1 bg-blue-500 rounded border-2 border-blue-500 text-white hover:bg-white hover:text-zinc-800 hover:border-zinc-800 transition-all duration-300"
                 >
                   SignUp
                 </Link>
@@ -137,7 +137,7 @@ const Navbar = () => {
           <>
             <Link
               to="/LogIn"
-              className={`${MobileNav} px-8 mb-8 text-4xl font-semibold py-2 text-white border border-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300`}
+              className={`${MobileNav} px-8 mb-8 text-4xl font-semibold py-2 text-black border-2 border-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300`}
               onClick={() =>
                 MobileNav === "hidden"
                   ? setMobileNav("block")
@@ -148,7 +148,7 @@ const Navbar = () => {
             </Link>
             <Link
               to="/SignUp"
-              className={`${MobileNav} px-8 mb-8 text-4xl font-semibold py-2 text-white bg-blue-500 rounded hover:bg-white hover:text-zinc-800 transition-all duration-300`}
+              className={`${MobileNav} px-8 mb-8 text-4xl font-semibold py-2 text-white bg-blue-500 rounded border-2 border-blue-500 hover:bg-white hover:text-zinc-800 hover:border-zinc-800 transition-all duration-300`}
               onClick={() =>
                 MobileNav === "hidden"
                   ? setMobileNav("block")
